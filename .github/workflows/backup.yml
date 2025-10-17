@@ -1,0 +1,12 @@
+name: Backup to Dropbox
+
+on:
+  push:
+    branches:
+      - '**'  # Run on all branches
+
+jobs:
+  backup_to_dropbox:
+    uses: louiekotler/personal-workflows/.github/workflows/backup-to-dropbox.yml@main
+    secrets:
+      DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
